@@ -25,20 +25,19 @@ const Edit = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/getone/${id}`,
+          `https://crud-app-backend-j5w3.onrender.com/api/getone/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
-        toast.error(
-          error.response?.data?.msg || "Failed to load user data.",
-          { position: "top-right" }
-        );
+        toast.error(error.response?.data?.msg || "Failed to load user data.", {
+          position: "top-right",
+        });
       }
     };
 
@@ -62,16 +61,15 @@ const Edit = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       toast.success(response.data.msg, { position: "top-right" });
       navigate("/");
     } catch (error) {
       console.error("Error updating user:", error);
-      toast.error(
-        error.response?.data?.msg || "Failed to update user.",
-        { position: "top-right" }
-      );
+      toast.error(error.response?.data?.msg || "Failed to update user.", {
+        position: "top-right",
+      });
     }
   };
 

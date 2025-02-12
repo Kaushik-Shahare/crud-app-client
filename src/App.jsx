@@ -1,5 +1,9 @@
-
-import { RouterProvider, createBrowserRouter, Outlet, Navigate } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import User from "./components/getuser/User";
 import Add from "./components/adduser/Add";
 import Edit from "./components/updateuser/Edit";
@@ -7,7 +11,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 // Simulate auth check
 const isAuthenticated = () => {
   return !!localStorage.getItem("token"); // Replace with your token validation logic
@@ -21,7 +25,6 @@ const ProtectedRoute = ({ children }) => {
 ProtectedRoute.propTypes = {
   children: PropTypes.node.isRequired, // Ensures 'children' is a valid React node
 };
-
 
 // Layout for authenticated pages
 const AuthenticatedLayout = () => {

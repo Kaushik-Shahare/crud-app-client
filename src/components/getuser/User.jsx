@@ -20,11 +20,14 @@ const User = () => {
 
       try {
         // Fetch user data with Authorization header
-        const response = await axios.get("http://localhost:8000/api/getall", {
-          headers: {
-            Authorization: `Bearer ${token}`,
+        const response = await axios.get(
+          "https://crud-app-backend-j5w3.onrender.com/api/getall",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           },
-        });
+        );
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -35,7 +38,7 @@ const User = () => {
         } else {
           toast.error(
             error.response?.data?.msg || "Failed to fetch user data.",
-            { position: "top-right" }
+            { position: "top-right" },
           );
         }
       }
@@ -54,21 +57,21 @@ const User = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:8000/api/delete/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      await axios.delete(
+        `https://crud-app-backend-j5w3.onrender.com/api/delete/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
-      setUsers((prevUsers) =>
-        prevUsers.filter((user) => user._id !== userId)
       );
+      setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
       toast.success("User deleted successfully!", { position: "top-right" });
     } catch (error) {
       console.error("Error deleting user:", error);
-      toast.error(
-        error.response?.data?.msg || "Failed to delete user.",
-        { position: "top-right" }
-      );
+      toast.error(error.response?.data?.msg || "Failed to delete user.", {
+        position: "top-right",
+      });
     }
   };
 

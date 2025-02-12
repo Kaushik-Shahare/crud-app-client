@@ -11,7 +11,6 @@ const Add = () => {
     email: "",
     password: "",
   };
-  
 
   const [user, setUser] = useState(users);
   const navigate = useNavigate();
@@ -38,13 +37,13 @@ const Add = () => {
     try {
       // Send POST request with Authorization header
       const response = await axios.post(
-        "http://localhost:8000/api/create",
+        "https://crud-app-backend-j5w3.onrender.com/api/create",
         user,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Attach token
           },
-        }
+        },
       );
 
       // Success message and navigation
@@ -62,15 +61,13 @@ const Add = () => {
       } else {
         toast.error(
           error.response?.data?.msg || "An unexpected error occurred.",
-          { position: "top-right" }
+          { position: "top-right" },
         );
       }
     }
   };
 
   return (
-    
-
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card shadow p-4 w-100" style={{ maxWidth: "400px" }}>
         <Link to="/" className="mb-3 text-decoration-none">
@@ -142,8 +139,7 @@ const Add = () => {
             ADD USER
           </button>
         </form>
-        <div>
-    </div>
+        <div></div>
       </div>
     </div>
   );
