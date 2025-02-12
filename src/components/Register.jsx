@@ -54,6 +54,7 @@ const Register = () => {
         onChange={handleChange}
       />
       <button type="submit">Register</button>
+      <a href="#/login">Login</a>
     </form>
   );
 };
