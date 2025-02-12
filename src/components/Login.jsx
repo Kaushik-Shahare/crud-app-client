@@ -43,6 +43,8 @@ const Login = () => {
         <button type="submit" className="btn btn-primary w-100">
           Login
         </button>
+
+        <a href="#/register">Register</a>
       </form>
     </div>
   );

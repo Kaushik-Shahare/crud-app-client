@@ -1,6 +1,6 @@
 import {
   RouterProvider,
-  createBrowserRouter,
+  createHashRouter,
   Outlet,
   Navigate,
 } from "react-router-dom";
@@ -52,7 +52,7 @@ const AuthenticatedLayout = () => {
 };
 
 // Router Configuration
-const route = createBrowserRouter([
+const route = createHashRouter([
   {
     path: "/",
     element: (
