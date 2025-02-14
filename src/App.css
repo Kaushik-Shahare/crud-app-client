@@ -40,3 +40,61 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-color: #000; /* changed to black */
+  color: #ffffff; /* changed to white */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding-top: 150px; /* ensure content isn’t hidden behind banner */
+}
+
+/* Modern UI improvements */
+header,
+button,
+input,
+a {
+  transition: all 0.3s ease;
+}
+
+header {
+  background-color: #222; /* dark header */
+}
+
+button,
+a {
+  color: #fff;
+}
+
+button:hover,
+a:hover {
+  opacity: 0.8;
+}
+
+.custom-container {
+  background-color: #222; /* dark background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* New animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhance form elements */
+input:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+button:hover {
+  transform: scale(1.02);
+}

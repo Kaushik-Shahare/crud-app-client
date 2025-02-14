@@ -28,34 +28,52 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="fname"
-        placeholder="First Name"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="lname"
-        placeholder="Last Name"
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        onChange={handleChange}
-      />
-      <button type="submit">Register</button>
-      <a href="#/login">Login</a>
-    </form>
+    <div
+      className="container custom-container my-5"
+      style={{ backgroundColor: "#222", color: "#fff" }}
+    >
+      <h2 className="text-center mb-4">Register</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="fname"
+          placeholder="First Name"
+          onChange={handleChange}
+          className="form-control mb-3"
+        />
+        <input
+          type="text"
+          name="lname"
+          placeholder="Last Name"
+          onChange={handleChange}
+          className="form-control mb-3"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          className="form-control mb-3"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          className="form-control mb-3"
+        />
+        <button type="submit" className="btn btn-primary w-100">
+          Register
+        </button>
+        <a
+          href="#/login"
+          className="d-block mt-3 text-center"
+          style={{ color: "#fff" }}
+        >
+          Already have an account? Login
+        </a>
+      </form>
+    </div>
   );
 };
 

@@ -43,7 +43,7 @@ const Add = () => {
           headers: {
             Authorization: `Bearer ${token}`, // Attach token
           },
-        },
+        }
       );
 
       // Success message and navigation
@@ -61,7 +61,7 @@ const Add = () => {
       } else {
         toast.error(
           error.response?.data?.msg || "An unexpected error occurred.",
-          { position: "top-right" },
+          { position: "top-right" }
         );
       }
     }
@@ -69,8 +69,15 @@ const Add = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-4 w-100" style={{ maxWidth: "400px" }}>
-        <Link to="/" className="mb-3 text-decoration-none">
+      <div
+        className="card shadow custom-container p-4 w-100"
+        style={{ maxWidth: "400px", backgroundColor: "#222", color: "#fff" }}
+      >
+        <Link
+          to="/"
+          className="mb-3 text-decoration-none"
+          style={{ color: "#fff" }}
+        >
           &larr; Back
         </Link>
         <h3 className="text-center mb-4">Add New User</h3>

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   RouterProvider,
   createHashRouter,
@@ -9,9 +10,11 @@ import Add from "./components/adduser/Add";
 import Edit from "./components/updateuser/Edit";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import HeaderBanner from "./components/HeaderBanner"; // new import
 import "./App.css";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+
 // Simulate auth check
 const isAuthenticated = () => {
   return !!localStorage.getItem("token"); // Replace with your token validation logic
@@ -38,6 +41,7 @@ const AuthenticatedLayout = () => {
 
   return (
     <div>
+      <HeaderBanner /> {/* Added header banner */}
       <header className="d-flex justify-content-between align-items-center p-3 bg-dark text-white">
         <h1>User Management App</h1>
         <button onClick={handleLogout} className="btn btn-danger">
@@ -51,7 +55,7 @@ const AuthenticatedLayout = () => {
   );
 };
 
-// Router Configuration
+// Router Configuration using createHashRouter; note: routes should be accessed using a '#' in the URL, e.g., http://localhost:3000/#/register
 const route = createHashRouter([
   {
     path: "/",
@@ -68,11 +72,30 @@ const route = createHashRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <div>
+        <HeaderBanner />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1 /* ensures content appears above banner */,
+          }}
+        >
+          <Login />
+        </div>
+      </div>
+    ),
   },
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <div>
+        <HeaderBanner />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Register />
+        </div>
+      </div>
+    ),
   },
 ]);
 

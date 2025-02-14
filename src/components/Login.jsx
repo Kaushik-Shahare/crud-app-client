@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container custom-container my-5">
       <h2 className="text-center mb-4">Login</h2>
       <form onSubmit={handleSubmit} className="w-50 mx-auto">
         <input
